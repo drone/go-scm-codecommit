@@ -6,7 +6,7 @@ import (
 
 // NewDefault returns a new codecommit client.
 func NewDefault() *scm.Client {
-	client := &wrapper{}
+	client := &wrapper{new(scm.Client)}
 	client.Webhooks = &webhookService{}
 	return client.Client
 }
